@@ -13,4 +13,5 @@ class BitmapEditor
       end
     end
   end
+
 end
