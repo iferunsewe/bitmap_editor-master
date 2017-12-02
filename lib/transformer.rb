@@ -1,5 +1,5 @@
 class Transformer
-  def initialize
+  def initialize(task, arguments={})
 
   end
 
@@ -7,15 +7,15 @@ class Transformer
 
   end
 
-  def colour_pixel_c(arr_needed, x, y)
+  def colour_pixel(colour, x, y)
 
   end
 
-  def colour_vertical_c(x1, x2)
+  def colour_vertical(colour, x1, x2)
 
   end
 
-  def colour_horizontal_c(x1, x2)
+  def colour_horizontal(colour, x1, x2)
 
   end
 end
