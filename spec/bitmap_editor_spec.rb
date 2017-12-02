@@ -20,6 +20,4 @@ describe BitmapEditor do
       end
     end
   end
-
-
 end

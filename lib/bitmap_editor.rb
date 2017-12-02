@@ -14,4 +14,7 @@ class BitmapEditor
     end
   end
 
+  def display(bitmap)
+
+  end
 end
