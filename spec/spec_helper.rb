@@ -18,11 +18,9 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require_relative '../lib/bitmap_editor'
+require_relative '../lib/transformer'
+require_relative '../lib/decipher'
 
-LIB_PATHS = '../lib/*.rb'
-Dir[LIB_PATHS].each do |dsl|
-  require path
-end
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
