@@ -3,10 +3,14 @@ require 'spec_helper'
 describe Transformer do
   subject(:transformer) { described_class.new }
 
-  context 'creating an image' do
-    it 'returns an image' do
+  context 'when an image has not been created' do
+    it 'returns an image when creating one' do
       transformer.create_image('I 5 6')
       expect(transformer.image).not_to be_empty
+    end
+
+    it "raises an error if an image isn't created and another command" do
+      expect{ transformer.colour_pixel('L 2 5 Y') }.to raise_error("You must create image first. Try adding the command 'I <columns> <rows>'")
     end
   end
 
@@ -62,7 +66,7 @@ describe Transformer do
     end
 
     context 'clearing an image' do
-      it 'clears an imaage' do
+      it 'clears an image' do
         transformer.clear_image
         expect(transformer.image).to be_empty
       end
