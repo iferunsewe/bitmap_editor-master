@@ -34,7 +34,7 @@ class Line
 
   def commands_are_valid?
     condition = %w(I L V H S C).include?(@text[0])
-    @reason_for_failure = "#{@text[0]} is not an accepted command" unless condition
+    @reason_for_failure = "#{@text[0]} is an unrecognised command :(" unless condition
     condition
   end
 

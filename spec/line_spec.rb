@@ -24,7 +24,7 @@ describe Line do
       let(:text) { 'R 34 8 Y'}
 
       it 'returns a reason for failure' do
-        expect(line.reason_for_failure).to eq("#{text[0]} is not an accepted command")
+        expect(line.reason_for_failure).to eq("#{text[0]} is an unrecognised command :(")
       end
     end
 
