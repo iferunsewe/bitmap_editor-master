@@ -19,6 +19,7 @@
 
 require_relative '../lib/bitmap_editor'
 require_relative '../lib/transformer'
+require_relative '../lib/line'
 require_relative '../lib/decipher'
 
 RSpec.configure do |config|

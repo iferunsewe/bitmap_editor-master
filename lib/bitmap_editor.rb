@@ -1,4 +1,4 @@
-require_relative 'decipher'
+require_relative 'line'
 require_relative 'transformer'
 
 class BitmapEditor
@@ -10,12 +10,14 @@ class BitmapEditor
     return puts "please provide correct file" if file.nil? || !File.exists?(file)
 
     File.open(file).each do |line|
-      line = line.chomp
-      task = Decipher.choose_task(line)
+      line = Line.new(line.chomp)
+      return puts line.reason_for_failure unless line.valid?
+      line_text = line.text
+      task = line.task
       if task == 'display_image' || task == 'clear_image'
         @transformer.send(task)
       else
-        @transformer.send(task, line)
+        @transformer.send(task, line_text)
       end
     end
   end
