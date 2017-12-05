@@ -27,6 +27,22 @@ describe Line do
         expect(line.reason_for_failure).to eq("#{text[0]} is not an accepted command")
       end
     end
+
+    context 'because it has an incorrect number of characters' do
+      let(:text) { 'L 40 8 Y h'}
+
+      it 'returns a reason for failure' do
+        expect(line.reason_for_failure).to include('Wrong number of characters for task:')
+      end
+    end
+
+    context 'because it has an incorrect number of coordinates' do
+      let(:text) { 'L 40 8 78'}
+
+      it 'returns a reason for failure' do
+        expect(line.reason_for_failure).to include('Wrong number of coordinates for task:')
+      end
+    end
   end
 
   context 'when the line is valid' do
