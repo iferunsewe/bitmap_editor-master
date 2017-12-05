@@ -13,9 +13,17 @@ describe BitmapEditor do
     end
 
     context 'when the file does not exist' do
-      let(:file) { '../examples/no_file.txt' }
+      let(:file) { 'examples/no_file.txt' }
       it 'returns a message' do
         expect(STDOUT).to receive(:puts).with('please provide correct file')
+        bitmap_editor
+      end
+    end
+
+    context 'when the file does exist' do
+      let(:file) { 'examples/show.txt' }
+      it 'returns a message' do
+        expect(STDOUT).not_to receive(:puts).with('please provide correct file')
         bitmap_editor
       end
     end
