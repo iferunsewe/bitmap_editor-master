@@ -67,5 +67,13 @@ describe Transformer do
         expect(transformer.image).to be_empty
       end
     end
+
+    context 'when it is an unreconizable command' do
+      let(:line){ 'A 5 6 J' }
+      it 'returns statement' do
+        expect(STDOUT).to receive(:puts).with("#{line} --- unrecognised command :(")
+        transformer.unrecognised_command(line)
+      end
+    end
   end
 end

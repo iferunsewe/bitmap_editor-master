@@ -11,8 +11,7 @@ describe Decipher do
     context 'when it is an unreconizable command' do
       let(:line){ 'A 5 6 J' }
       it 'returns statement' do
-        expect(STDOUT).to receive(:puts).with('unrecognised command :(')
-        choose_task
+        expect(choose_task).to eq('unrecognised_command')
       end
     end
 

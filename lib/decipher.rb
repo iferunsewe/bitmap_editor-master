@@ -14,7 +14,7 @@ module Decipher
     when line == 'C'
       'clear_image'
     else
-      puts 'unrecognised command :('
+      'unrecognised_command'
     end
   end
 end

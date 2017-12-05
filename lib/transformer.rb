@@ -54,6 +54,10 @@ class Transformer
     @image.clear
   end
 
+  def unrecognised_command(line)
+    puts "#{line} --- unrecognised command :("
+  end
+
   private
 
   def join_image
